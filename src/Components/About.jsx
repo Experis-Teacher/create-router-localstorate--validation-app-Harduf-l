@@ -7,7 +7,11 @@ export default class About extends Component {
   }
 
   saveName(e) {
-    localStorage["name"] = e.target.value;
+    if (e.target.value.match(/harduf/)) {
+      localStorage["name"] = e.target.value;
+    }
+
+    localStorage["name"] = "not harduf"
   }
 
   navigate = () => {
