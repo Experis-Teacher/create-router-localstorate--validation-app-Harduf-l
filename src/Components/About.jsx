@@ -7,11 +7,12 @@ export default class About extends Component {
   }
 
   saveName(e) {
-    if (e.target.value.match(/harduf/)) {
+    if (e.target.value.match(/^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)/)) {
       localStorage["name"] = e.target.value;
+      console.log(e.target.value)
     }
 
-    localStorage["name"] = "not harduf"
+    localStorage["name"] = "name not valid"
   }
 
   navigate = () => {

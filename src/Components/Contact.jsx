@@ -7,7 +7,11 @@ export default class Contact extends Component {
   }
 
   savePhone(e) {
-    localStorage["phone"] = e.target.value;
+    if (e.target.value.match(/[0-9]{2,3}-[0-9]{5,9}/)) {
+      localStorage["phone"] = e.target.value;
+    }
+
+    localStorage["phone"] = "not valid"
   }
 
   navigate  = () => {
